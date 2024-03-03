@@ -21,6 +21,6 @@ class TestControllerTest {
 		String answer = testController.hello();
 
 		// then
-		assertThat(answer).isEqualTo("hello");
+		assertThat(answer).isEqualTo("hello!");
 	}
 }
