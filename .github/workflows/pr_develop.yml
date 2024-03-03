@@ -2,8 +2,10 @@
 name: Java CI with Gradle
 
 on:
-  push:
-    branches: [ "feature/#1_setting_CI" ]
+  pull_request:
+    types: [ opened, reopened ]
+    branches: [ "develop" ]
+
 
 jobs:
   build:
