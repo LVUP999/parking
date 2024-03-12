@@ -11,8 +11,4 @@ class CiTest {
 		assertThat(1).isEqualTo(1);
 	}
 
-	@Test
-	void fail(){
-		assertThat(1).isEqualTo(0);
-	}
 }
