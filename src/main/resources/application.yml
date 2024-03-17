@@ -1,16 +1,25 @@
 spring:
   profiles:
-    default: local
-
+    active: local
+  sql:
+    init:
+      platform: mysql
+      mode: always
   datasource:
-    url: ${url}
+    url: ${DB_URL}
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: ${username}
-    password: ${password}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+        format_sql: true
+    generate-ddl: true
     hibernate:
       ddl-auto: none
+    show-sql: true
 
 ---
 spring:
