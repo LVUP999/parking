@@ -6,7 +6,7 @@ services:
     image: mysql/mysql-server:8.0
 
     environment:
-      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: parking
       MYSQL_ROOT_HOST: '%'
       MYSQL_DATABASE: 'parking'
       TZ: Asia/Seoul
