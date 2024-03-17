@@ -25,6 +25,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MYSQLDialect
 #    defer-datasource-initialization: true # (2.5~) Hibernate ??? ?? data.sql ??
 
 ---
@@ -40,6 +42,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    
 
   sql:
     init:
