@@ -3,10 +3,10 @@ spring:
     default: local
 
   datasource:
-    url: ${url}
+    url: jdbc:mysql://localhost:3309/parking
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: ${username}
-    password: ${password}
+    username: root
+    password: parking
 
   jpa:
     hibernate:
