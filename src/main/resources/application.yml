@@ -1,16 +1,24 @@
 spring:
   profiles:
-    default: local
-
+    active: local
+  sql:
+    init:
+      platform: mysql
+      mode: always
   datasource:
-    url:  jdbc:mysql://localhost:3306/parking
+    url: jdbc:mysql://localhost:3309/parking
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username:
-    password:
+    username: root
+    password: parking
 
   jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    generate-ddl: true
     hibernate:
       ddl-auto: none
+    show-sql: true
 
 ---
 spring:
@@ -25,6 +33,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    database: MYSQL
 #    defer-datasource-initialization: true # (2.5~) Hibernate ??? ?? data.sql ??
 
 ---
