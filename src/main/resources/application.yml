@@ -6,15 +6,15 @@ spring:
       platform: mysql
       mode: always
   datasource:
-    url: ${DB_URL}
+    url: jdbc:mysql://localhost:3309/parking
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    username: root
+    password: parking
 
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL57Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     generate-ddl: true
     hibernate:
@@ -34,6 +34,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MYSQLDialect
 #    defer-datasource-initialization: true # (2.5~) Hibernate ??? ?? data.sql ??
 
 ---
