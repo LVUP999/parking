@@ -8,11 +8,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: parking
       MYSQL_ROOT_HOST: '%'
-      MYSQL_DATABASE: 'parking'
+      MYSQL_DATABASE: parking
       TZ: Asia/Seoul
 
-#    volumes:
-#      - ./mysql-init.d:/docker-entrypoint-initdb.d
+    # volumes:
+    #   - ./src/main/resources/mysql-init.d:/docker-entrypoint-initdb.d
 
     ports:
       - '3309:3306'
@@ -20,11 +20,3 @@ services:
     command:
       - '--character-set-server=utf8mb4'
       - '--collation-server=utf8mb4_unicode_ci'
-
-  # application:
-  #   container_name: app-parking
-  #   build: .
-  #   ports:
-  #     - '8080:8080'
-  #   depends_on:
-  #     - database-mysql
