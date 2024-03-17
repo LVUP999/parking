@@ -11,22 +11,9 @@ services:
       MYSQL_DATABASE: parking
       TZ: Asia/Seoul
 
-    # volumes:
-    #   - ./src/main/resources/mysql-init.d:/docker-entrypoint-initdb.d
-
     ports:
       - '3309:3306'
 
     command:
       - '--character-set-server=utf8mb4'
       - '--collation-server=utf8mb4_unicode_ci'
-
-  application:
-    container_name: app-parking
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '8080:8080'
-    depends_on:
-      - database-mysql

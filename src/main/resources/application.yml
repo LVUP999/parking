@@ -14,7 +14,6 @@ spring:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     generate-ddl: true
     hibernate:
@@ -29,14 +28,13 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
         format_sql: true
     database: MYSQL
-    database-platform: org.hibernate.dialect.MYSQLDialect
-#    defer-datasource-initialization: true # (2.5~) Hibernate ??? ?? data.sql ??
+    defer-datasource-initialization: true
 
 ---
 spring:
@@ -46,7 +44,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:

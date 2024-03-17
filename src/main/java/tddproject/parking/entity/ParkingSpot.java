@@ -16,8 +16,8 @@ public class ParkingSpot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 1, unique = true, nullable = false)
-    private String area;
+    @Column(unique = true, nullable = false)
+    private char area;
 
     @Column(nullable = false)
     private int seq;
