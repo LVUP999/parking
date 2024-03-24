@@ -18,9 +18,9 @@ public class ParkingSpot {
 
     // 구역 ex. A, B
     @Column(unique = true, nullable = false)
-    private char area;
+    private Character area;
 
     // 구역 내 번호
     @Column(nullable = false)
-    private int seq;
+    private Integer seq;
 }
