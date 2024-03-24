@@ -11,9 +11,6 @@ services:
       MYSQL_DATABASE: parking
       TZ: Asia/Seoul
 
-    # volumes:
-    #   - ./src/main/resources/mysql-init.d:/docker-entrypoint-initdb.d
-
     ports:
       - '3309:3306'
 
