@@ -3,7 +3,10 @@ name: build and test when pull request
 on:
   pull_request:
     types: [ opened, reopened ]
-    branches: [ feature/#8_setting_variables ]
+    branches: [ develop ]
+  push:
+    branches: [feature/#8_setting_variables]
+
 
 permissions:
   checks: write
