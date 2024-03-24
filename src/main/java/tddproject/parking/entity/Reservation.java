@@ -1,6 +1,7 @@
 package tddproject.parking.entity;
 
 import jakarta.persistence.*;
+import tddproject.parking.common.code.CancelStatus;
 
 import java.time.LocalDateTime;
 
@@ -40,4 +41,10 @@ public class Reservation {
     // 주차 예약 종료 시간
     @Column(nullable = false)
     private LocalDateTime endTime;
+
+    // 주차 예약 취소 여부
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private CancelStatus cancel;
+
 }
