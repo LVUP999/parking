@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  * fileName    : Reservation
  * author      : hsj
  * date        : 3/16/24
- * description :
+ * description : 예약 정보를 저장하는 테이블
  */
 
 @Entity
@@ -19,19 +19,25 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // 예약한 사용자
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    // 예약한 주차 공간
     @ManyToOne
     @JoinColumn(name = "parking_spot_id", nullable = false)
     private ParkingSpot parkingSpot;
 
+    // 예약을 생성한 시간
     @Column(nullable = false)
     private LocalDateTime reservationTime;
 
+    // 주차 예약 시작 시간
     @Column(nullable = false)
     private LocalDateTime startTime;
+
+    // 주차 예약 종료 시간
     @Column(nullable = false)
     private LocalDateTime endTime;
 }

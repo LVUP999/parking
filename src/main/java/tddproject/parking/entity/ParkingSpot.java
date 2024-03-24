@@ -7,7 +7,7 @@ import jakarta.persistence.*;
  * fileName    : ParkingSpot
  * author      : hsj
  * date        : 3/16/24
- * description :
+ * description : 주차 공간 정보를 저장하는 테이블
  */
 @Entity
 @Table(name = "parking_spot_tb")
@@ -16,9 +16,11 @@ public class ParkingSpot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // 구역 ex. A, B
     @Column(unique = true, nullable = false)
     private char area;
 
+    // 구역 내 번호
     @Column(nullable = false)
     private int seq;
 }
