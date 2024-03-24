@@ -28,6 +28,26 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
 
+      - name: Set up yml environment variables
+        run: |
+          echo "spring.datasource.url=${{ secrets.DB_URL }}" >> src/main/resources/application.yml
+          echo "spring.datasource.username=${{ secrets.DB_USERNAME }}" >> src/main/resources/application.yml
+          echo "spring.datasource.password=${{ secrets.DB_PASSWORD }}" >> src/main/resources/application.yml
+
+
+      - name: Set up docker-compose environment variables
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+          MYSQL_ROOT_HOST: ${{ secrets.MYSQL_ROOT_HOST }}
+        run: |
+          echo "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}" >> .env
+          echo "MYSQL_DATABASE=${MYSQL_DATABASE}" >> .env
+          echo "MYSQL_ROOT_HOST=${MYSQL_ROOT_HOST}" >> .env
+
+      - name: Run Docker Compose
+        run: docker-compose up -d
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
