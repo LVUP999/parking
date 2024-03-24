@@ -27,6 +27,7 @@ CREATE TABLE reservation_tb (
     reservation_time TIMESTAMP NOT NULL COMMENT '예약 생성 시간',
     start_time TIMESTAMP NOT NULL COMMENT '주차 예약 시작 시간',
     end_time TIMESTAMP NOT NULL COMMENT '주차 예약 종료 시간',
+	cancel CHAR(1) NOT NULL COMMENT '주차 예약 취소 여부',
     FOREIGN KEY (user_id) REFERENCES user_tb(id),
     FOREIGN KEY (parking_spot_id) REFERENCES parking_spot_tb(id)
     ) COMMENT = '예약';
